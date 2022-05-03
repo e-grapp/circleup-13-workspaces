@@ -13,6 +13,7 @@ jobs:
     docker:
       - image: cimg/base:2022.03
     steps:
+        - checkout
         - run: mkdir -p app/linux
         - run:
             name: Generate app
@@ -28,6 +29,7 @@ jobs:
     docker:
       - image: cimg/base:2022.03 # use your imagination, using all linux/docker for ease-of-use
     steps:
+        - checkout
         - run: mkdir -p app/windows
         - run:
             name: Generate app
@@ -43,6 +45,7 @@ jobs:
       docker:
         - image: cimg/base:2022.03 # use your imagination, using all linux/docker for ease-of-use
       steps:
+        - checkout
         - run: mkdir -p app/mac
         - run:
             name: Generate app
