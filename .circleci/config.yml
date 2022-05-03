@@ -1,5 +1,12 @@
 version: 2.1
 
+references:
+  workspace_root: &workspace_root
+    /tmp/workspace
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
 jobs:
   build-linux:
     docker:
@@ -12,7 +19,7 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace: 
-            root: ~
+            root: *workspace_root
             paths: 
               - linux
 
@@ -27,7 +34,7 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace: 
-            root: ~
+            root: *workspace_root
             paths: 
               - windows
 
@@ -42,7 +49,7 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace: 
-            root: ~
+            root: *workspace_root
             paths: 
               - mac
 
