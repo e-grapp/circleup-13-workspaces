@@ -62,7 +62,7 @@ jobs:
         - image: cimg/base:2022.03
       steps:
         - attach_workspace:
-            at: app
+            at: tmp
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
             path: tmp
             destination: artifacts
